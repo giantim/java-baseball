@@ -28,6 +28,14 @@ public class BaseballNumbers {
         }
     }
 
+    public BaseballNumber getBaseballNumberByIndex(int index) {
+        return this.baseballNumbers.get(index);
+    }
+
+    public boolean contains(BaseballNumber baseballNumber) {
+        return this.baseballNumbers.contains(baseballNumber);
+    }
+
     public List<BaseballNumber> getBaseballNumbers() {
         return this.baseballNumbers;
     }

@@ -7,19 +7,19 @@ import view.OutputViewer;
 public class BaseballGameController {
     private static final int ALL_STRIKE = 3;
 
-    public static void run(Computer computer) {
-        BaseballNumbers computerNumbers;
+    public static void run() {
+        Computer computer = new Computer();
+        BaseballNumbers computerNumbers = computer.getComputerBaseballNumbers();
         int strikeCount = 0;
 
         do {
-            computerNumbers = computer.getComputerBaseballNumbers();
             BaseballNumbers playerNumbers = createPlayerBaseballNumbers();
             strikeCount = ResultCalculator.calculateStrike(playerNumbers, computerNumbers);
             int ballCount = ResultCalculator.calculateBall(playerNumbers, computerNumbers);
             OutputViewer.printResult(strikeCount, ballCount);
         } while (strikeCount != ALL_STRIKE);
 
-        checkEndGame(computer);
+        checkEndGame();
     }
 
     private static BaseballNumbers createPlayerBaseballNumbers() {
@@ -32,10 +32,10 @@ public class BaseballGameController {
         }
     }
 
-    private static void checkEndGame(Computer computer) {
+    private static void checkEndGame() {
         GameContinue gameContinue = createGameContinue();
         if (gameContinue.playMore()) {
-            run(new Computer());
+            run();
         }
     }
 

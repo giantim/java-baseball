@@ -53,7 +53,7 @@ public class PlayerBaseballNumbersGenerator {
     private static List<BaseballNumber> getBaseballNumbers(List<Integer> numbers) {
         List<BaseballNumber> baseballNumberList = new ArrayList<>();
         for (int number : numbers) {
-            BaseballNumber baseballNumber = new BaseballNumber(number);
+            BaseballNumber baseballNumber = BaseballNumberPool.getBaseballNumberByNumber(number);
             baseballNumberList.add(baseballNumber);
         }
         return baseballNumberList;

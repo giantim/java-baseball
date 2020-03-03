@@ -5,6 +5,7 @@ import spark.utils.StringUtils;
 public class GameContinue {
     private static final int MIN_GAME_CONTINUE = 1;
     private static final int MAX_GAME_CONTINUE = 2;
+    private static final int GAME_CONTINUE = 1;
     private static final String INVALID_GAME_CONTINUE_MESSAGE = "1 또는 2를 입력해주세요.";
 
     private int gameContinue;
@@ -39,6 +40,6 @@ public class GameContinue {
     }
 
     public boolean playMore() {
-        return this.gameContinue == 1;
+        return this.gameContinue == GAME_CONTINUE;
     }
 }

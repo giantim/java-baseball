@@ -24,4 +24,11 @@ public class BaseballNumberPool {
                 .limit(MAX_BASEBALL_NUMBERS_SIZE)
                 .collect(Collectors.toList());
     }
+
+    public static BaseballNumber getBaseballNumberByNumber(int number) {
+        return baseballNumberPool.stream()
+                .filter(bn -> bn.isSame(number))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("잘못된 범위의 숫자를 입력하였습니다."));
+    }
 }

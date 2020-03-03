@@ -19,6 +19,10 @@ public class BaseballNumber {
         }
     }
 
+    public boolean isSame(int number) {
+        return this.baseballNumber == number;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
